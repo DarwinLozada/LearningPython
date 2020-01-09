@@ -78,14 +78,16 @@ def find_contact(contacts):
     search_term_email = input("Introduce el correo del contacto o parte de él: ")
     found_contacts = []
 
-    print("He encontrado los siguientes contactos:")
+    sleep(2)
+    print("\n He encontrado los siguientes contactos:")
     contact_indexes = []
     contact_counter = 0
 
     for contact in contacts:
         if contact["name"].find(search_term_name) >= 0:
             found_contacts.append(contact)
-            print("Según el nombre")
+            print("\n Según el nombre")
+            sleep(2)
             print("{} - {}".format(contact_counter, contact["name"]))
             contact_indexes.append(contact_counter)
             contact_counter += 1
@@ -105,8 +107,8 @@ def find_contact(contacts):
     if len(contact_indexes) > 1:
         contact_index = ask_until_option_expected(contact_indexes)
     elif len(contact_indexes) == 0:
-        print("No se ha encontrado ninguno.")
-        user_answer = input("¿Deseas regresar al menú (1) o volver a intentar (2)? ")
+        print("No se ha encontrado ningún contacto con esas credenciales.")
+        user_answer = input("\n ¿Deseas regresar al menú (1) o volver a intentar (2)? \n ")
         if user_answer == "1":
             return
         elif user_answer == "2":
