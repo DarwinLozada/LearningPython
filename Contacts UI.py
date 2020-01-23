@@ -1,7 +1,6 @@
 import pickle
 from tkinter import *
 from tkinter import ttk
-from time import sleep
 
 
 class Contact:
@@ -26,31 +25,6 @@ def add_contact_tk(contacts, name, phone, email, frame_contact_list):
     ttk.Label(frame_contact_list, text=contact.name).grid(column=1, row=row, padx="12")
     ttk.Label(frame_contact_list, text=contact.phone).grid(column=2, row=row, padx="10")
     ttk.Label(frame_contact_list, text=contact.email).grid(column=3, row=row, padx="10")
-
-
-def remove_contact(contacts):
-    sleep(1)
-    list_name_contacts = []
-    digit_list = []
-    name_digit = 0
-    for contact in contacts:
-        name_contact = contact['name']
-        list_name_contacts.append(name_contact)
-
-    print("\n\nEliminar contacto\n")
-    sleep(1)
-    print("\n¿Qué contacto quieres eliminar?\n")
-    sleep(2)
-
-    for contact_name in list_name_contacts:
-        print("{}-{}".format(name_digit, contact_name))
-        digit_list.append(name_digit)
-        name_digit += 1
-    digit_contact_eliminate = int(input("Diga el número del contacto que desea eliminar "))
-    for digit in digit_list:
-        if digit_contact_eliminate == digit:
-            contacts.pop(digit_contact_eliminate)
-    sleep(2)
 
 
 def load_contacts():
