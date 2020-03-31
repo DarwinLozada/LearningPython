@@ -1,4 +1,3 @@
-import random
 from time import sleep
 
 REST_TIME = 3
@@ -14,7 +13,6 @@ def main():
             pharses_list.append(user_phrase)
 
     if pharses_list:
-        phrase = random.choice(pharses_list)
         while pharses_list:
             for phrase in pharses_list:
                 print(phrase)

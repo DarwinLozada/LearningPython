@@ -24,6 +24,3 @@ while not accion:
 
     elif accion == "3":
         accion = True
-
-
-

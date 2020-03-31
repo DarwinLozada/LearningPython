@@ -50,7 +50,7 @@ def main():
                 user_hour_alarm = datetime.time(hour=hour_alarm)
                 days_of_alarm_input = ""
                 days_of_alarm_list = []
-                print("Write End to end the loop ")
+                print("Write ""End"" to end the loop ")
                 while not days_of_alarm_input == "End":
                     days_of_alarm_input = input("Tell me the days that you want to set the alarm 0 to 6, 0 is "
                                                 "Monday ""and 6 is Sunday ")
@@ -62,8 +62,10 @@ def main():
                             if user_hour_alarm == current_hour:
                                 write_file_and_screen("ALARM. It's {}".format(current_hour), "Weekdays "
                                                                                              "alarm.txt")
-    while True:        # Se imprime la hora actual y se le va sumando una más, además de que si indica si es de día
-                        # o de noche
+    # Se imprime la hora actual y se le va sumando una más, además de que si indica si es de día
+    # o de noche
+
+    while True:
 
         sleep(5)
         current_time += datetime.timedelta(hours=1)
